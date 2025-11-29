@@ -1,20 +1,17 @@
-﻿---
-title: "HTML/CSS 网页开发"
-date: 2025-11-29
-draft: true
-description: "学习"
-difficulty: "初级"
-duration: "2小时"
+---
+title: "HTML 和 CSS 基础"
+date: 2024-01-16
+description: "网页开发的基础知识"
 ---
 
-# HTML/CSS 网页开发
+# HTML 和 CSS 教程
 
-欢迎学习HTML/CSS 网页开发！
+学习网页开发的基础。
 
-## 概述
+## HTML 结构
 
-在这里写下教程的简介...
+了解 HTML 标签和文档结构。
 
-## 开始学习
+## CSS 样式
 
-内容即将更新...
+掌握 CSS 选择器和样式规则。

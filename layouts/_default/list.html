@@ -1,0 +1,18 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+    <div style="margin: 2rem 0;">
+        {{ .Content }}
+    </div>
+    {{ end }}
+    
+    <div class="tutorial-grid">
+        {{ range .Pages }}
+        <a href="{{ .RelPermalink }}" class="tutorial-card">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description | default "点击查看详情..." }}</p>
+            <small style="color: #666;">{{ .Date.Format "2006-01-02" }}</small>
+        </a>
+        {{ end }}
+    </div>
+{{ end }}

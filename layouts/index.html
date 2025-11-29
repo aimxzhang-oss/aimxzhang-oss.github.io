@@ -1,12 +1,37 @@
 {{ define "main" }}
-    <h1>欢迎！</h1>
-    <p>这是我的 Hugo 博客。</p>
-    <p>如果看到这个页面，说明 Hugo 构建成功了！</p>
-    
-    <h2>内容列表</h2>
-    <ul>
-    {{ range .Site.RegularPages }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-    </ul>
+    <div style="text-align: center; padding: 3rem 0;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">欢迎来到 {{ .Site.Title }}</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 3rem;">这是一个使用 Hugo 构建的技术博客</p>
+    </div>
+
+    <section>
+        <h2> 教程分类</h2>
+        <div class="tutorial-grid">
+            <a href="/tutorials/database/mysql/" class="tutorial-card">
+                <h3> 数据库</h3>
+                <p>学习 MySQL、Redis 等数据库技术</p>
+            </a>
+            <a href="/tutorials/frontend/html-css/" class="tutorial-card">
+                <h3> 前端开发</h3>
+                <p>HTML、CSS、JavaScript 等前端技术</p>
+            </a>
+            <a href="/tutorials/ai/machine-learning/" class="tutorial-card">
+                <h3> AI & 数据分析</h3>
+                <p>机器学习、深度学习等技术</p>
+            </a>
+        </div>
+    </section>
+
+    <section style="margin-top: 3rem;">
+        <h2> 最新内容</h2>
+        <div class="tutorial-grid">
+            {{ range first 6 .Site.RegularPages }}
+            <a href="{{ .RelPermalink }}" class="tutorial-card">
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Description | default "阅读更多..." }}</p>
+                <small style="color: #666;">{{ .Date.Format "2006-01-02" }}</small>
+            </a>
+            {{ end }}
+        </div>
+    </section>
 {{ end }}

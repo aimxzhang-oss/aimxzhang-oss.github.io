@@ -1,4 +1,4 @@
 baseURL = 'https://aimxzhang-oss.github.io/'
 languageCode = 'zh-cn'
 title = '我的技术博客'
-theme = ''
+# 注意：完全没有 theme 配置，甚至不写 theme = ""
