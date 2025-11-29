@@ -4,72 +4,100 @@
     <p class="breadcrumb">首页</p>
 </div>
 
-<div class="tutorial-grid">
-    <a href="/tutorials/database/" class="tutorial-card">
-        <h3>数据库教程</h3>
-        <p>学习 MySQL、Redis、MongoDB 等数据库技术，掌握数据存储和管理技能。从基础概念到高级优化。</p>
-        <div class="tutorial-meta">
-            <span>📚 8个教程</span>
-            <span>⭐ 热门</span>
+<!-- 文章导航栏 -->
+<section style="margin-bottom: 40px;">
+    <h2 style="color: #2c3e50; margin-bottom: 20px; border-left: 4px solid #e74c3c; padding-left: 15px;">📝 最新文章</h2>
+    <div class="tutorial-grid">
+        {{ range where .Site.RegularPages "Type" "posts" }}
+        <a href="{{ .RelPermalink }}" class="tutorial-card">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description | default "阅读完整内容..." }}</p>
+            <div class="tutorial-meta">
+                <span>📅 {{ .Date.Format "2006-01-02" }}</span>
+                <span>👁️ 阅读</span>
+            </div>
+        </a>
+        {{ else }}
+        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+            <div style="font-size: 48px; margin-bottom: 20px;"></div>
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">暂无文章</h3>
+            <p>欢迎添加你的第一篇文章！</p>
         </div>
-    </a>
-    
-    <a href="/tutorials/frontend/" class="tutorial-card">
-        <h3>前端开发</h3>
-        <p>HTML、CSS、JavaScript、Vue、React 等前端技术栈。构建现代化的用户界面和交互体验。</p>
-        <div class="tutorial-meta">
-            <span>📚 12个教程</span>
-            <span>🔥 最新</span>
-        </div>
-    </a>
-    
-    <a href="/tutorials/backend/" class="tutorial-card">
-        <h3>后端开发</h3>
-        <p>Node.js、Python、Java、Go 等后端开发技术。构建稳定可靠的服务器端应用程序。</p>
-        <div class="tutorial-meta">
-            <span>📚 10个教程</span>
-            <span>💼 实战</span>
-        </div>
-    </a>
-    
-    <a href="/tutorials/ai/" class="tutorial-card">
-        <h3>AI & 数据分析</h3>
-        <p>机器学习、深度学习、数据分析、人工智能应用。探索数据科学和AI的前沿技术。</p>
-        <div class="tutorial-meta">
-            <span>📚 6个教程</span>
-            <span>🚀 前沿</span>
-        </div>
-    </a>
-    
-    <a href="/tutorials/mobile/" class="tutorial-card">
-        <h3>移动开发</h3>
-        <p>Android、iOS、React Native、Flutter 移动应用开发。构建跨平台的移动应用程序。</p>
-        <div class="tutorial-meta">
-            <span>📚 5个教程</span>
-            <span>📱 移动</span>
-        </div>
-    </a>
-    
-    <a href="/tutorials/tools/" class="tutorial-card">
-        <h3>开发工具</h3>
-        <p>Git、Docker、VS Code、Linux 等开发工具和环境配置。提升开发效率和协作能力。</p>
-        <div class="tutorial-meta">
-            <span>📚 7个教程</span>
-            <span>🛠️ 工具</span>
-        </div>
-    </a>
-</div>
+        {{ end }}
+    </div>
+</section>
 
+<!-- 教程分类 -->
+<section style="margin-bottom: 40px;">
+    <h2 style="color: #2c3e50; margin-bottom: 20px; border-left: 4px solid #3498db; padding-left: 15px;"> 教程分类</h2>
+    <div class="tutorial-grid">
+        <a href="/tutorials/database/" class="tutorial-card">
+            <h3> 数据库教程</h3>
+            <p>学习 MySQL、Redis、MongoDB 等数据库技术，掌握数据存储和管理技能。</p>
+            <div class="tutorial-meta">
+                <span> 8个教程</span>
+                <span> 热门</span>
+            </div>
+        </a>
+        
+        <a href="/tutorials/frontend/" class="tutorial-card">
+            <h3> 前端开发</h3>
+            <p>HTML、CSS、JavaScript、Vue、React 等前端技术栈。构建现代化的用户界面。</p>
+            <div class="tutorial-meta">
+                <span> 12个教程</span>
+                <span> 最新</span>
+            </div>
+        </a>
+        
+        <a href="/tutorials/backend/" class="tutorial-card">
+            <h3> 后端开发</h3>
+            <p>Node.js、Python、Java、Go 等后端开发技术。构建稳定可靠的服务器应用。</p>
+            <div class="tutorial-meta">
+                <span> 10个教程</span>
+                <span> 实战</span>
+            </div>
+        </a>
+        
+        <a href="/tutorials/ai/" class="tutorial-card">
+            <h3> AI & 数据分析</h3>
+            <p>机器学习、深度学习、数据分析、人工智能应用。探索数据科学前沿技术。</p>
+            <div class="tutorial-meta">
+                <span> 6个教程</span>
+                <span> 前沿</span>
+            </div>
+        </a>
+        
+        <a href="/tutorials/mobile/" class="tutorial-card">
+            <h3> 移动开发</h3>
+            <p>Android、iOS、React Native、Flutter 移动应用开发。构建跨平台移动应用。</p>
+            <div class="tutorial-meta">
+                <span> 5个教程</span>
+                <span> 移动</span>
+            </div>
+        </a>
+        
+        <a href="/tutorials/tools/" class="tutorial-card">
+            <h3> 开发工具</h3>
+            <p>Git、Docker、VS Code、Linux 等开发工具。提升开发效率和协作能力。</p>
+            <div class="tutorial-meta">
+                <span> 7个教程</span>
+                <span> 工具</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- 学习路径推荐 -->
 <section style="margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
-    <h2 style="color: #2c3e50; margin-bottom: 20px;">🎯 学习路径推荐</h2>
+    <h2 style="color: #2c3e50; margin-bottom: 20px;"> 学习路径推荐</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
         <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db;">
             <h3 style="color: #2c3e50; margin-bottom: 10px;">前端工程师</h3>
-            <p style="color: #666; font-size: 14px;">HTML → CSS → JavaScript → Vue/React</p>
+            <p style="color: #666; font-size: 14px;">HTML  CSS  JavaScript  Vue/React</p>
         </div>
         <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #e74c3c;">
             <h3 style="color: #2c3e50; margin-bottom: 10px;">后端工程师</h3>
-            <p style="color: #666; font-size: 14px;">数据库 → 后端语言 → 框架 → 部署</p>
+            <p style="color: #666; font-size: 14px;">数据库  后端语言  框架  部署</p>
         </div>
         <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #9b59b6;">
             <h3 style="color: #2c3e50; margin-bottom: 10px;">全栈工程师</h3>
