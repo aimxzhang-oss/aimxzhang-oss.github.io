@@ -1,0 +1,23 @@
+baseURL = "https://aimxzhang-oss.github.io/"
+languageCode = "zh-cn"
+title = "编程教程网"
+theme = ""
+
+[params]
+  title = "编程教程网"
+  author = "教程团队"
+  description = "全面的编程教程学习平台"
+  
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "教程"
+    url = "/tutorials/"
+    weight = 2
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 3

@@ -1,0 +1,11 @@
+﻿{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <div style="color:#666;margin-bottom:20px;">
+    <time>{{ .Date.Format "2006年1月2日" }}</time>
+  </div>
+  <div>
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

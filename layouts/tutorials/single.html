@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article>
+    <div class="content-header">
+        <h1>{{ .Title }}</h1>
+        <div style="color: #666; margin-top: 10px;">
+            <span>📖 {{ .Params.difficulty | default "初级" }}</span>
+            <span style="margin: 0 15px;">⏱️ {{ .Params.duration | default "1小时" }}</span>
+            <span>📅 {{ .Date.Format "2006-01-02" }}</span>
+        </div>
+    </div>
+
+    <!-- 教程目录 -->
+    <div class="tutorial-toc">
+        <h3>📑 教程目录</h3>
+        <ul class="toc-list">
+            <li><a href="#introduction">课程介绍</a></li>
+            <li><a href="#installation">环境安装</a></li>
+            <li><a href="#basics">基础知识</a></li>
+            <li><a href="#advanced">进阶内容</a></li>
+            <li><a href="#examples">实战案例</a></li>
+            <li><a href="#summary">总结</a></li>
+        </ul>
+    </div>
+
+    <!-- 教程内容 -->
+    <div class="tutorial-content">
+        {{ .Content }}
+    </div>
+
+    <!-- 导航按钮 -->
+    <div style="display: flex; justify-content: space-between; margin: 30px 0; padding: 20px 0; border-top: 1px solid #e9ecef;">
+        <a href="{{ .Parent.RelPermalink }}" style="color: #e74c3c; text-decoration: none;">← 返回教程列表</a>
+        <a href="#" style="color: #e74c3c; text-decoration: none;">下一教程 →</a>
+    </div>
+
+    <!-- 评论区域 -->
+    <div class="comments-section">
+        <h3>💬 学习讨论</h3>
+        <div class="comment-form">
+            <textarea placeholder="在学习过程中遇到问题？或者有好的建议？欢迎留言讨论..."></textarea>
+            <button>发表评论</button>
+        </div>
+        <ul class="comment-list">
+            <li class="comment-item">
+                <div class="comment-author">技术达人</div>
+                <span class="comment-date">2024-01-16</span>
+                <div class="comment-content">这个教程很全面，特别是实战案例部分很有帮助！</div>
+            </li>
+            <li class="comment-item">
+                <div class="comment-author">编程新手</div>
+                <span class="comment-date">2024-01-15</span>
+                <div class="comment-content">环境配置部分能不能再详细一些？我在安装时遇到了一些问题。</div>
+            </li>
+        </ul>
+    </div>
+</article>
+{{ end }}
