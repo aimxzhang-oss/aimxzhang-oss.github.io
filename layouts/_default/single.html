@@ -1,11 +1,15 @@
-﻿{{ define "main" }}
-<article>
-  <h1>{{ .Title }}</h1>
-  <div style="color:#666;margin-bottom:20px;">
-    <time>{{ .Date.Format "2006年1月2日" }}</time>
-  </div>
-  <div>
-    {{ .Content }}
-  </div>
-</article>
+{{ define "main" }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        <div style="color: #666; margin: 1rem 0;">
+            <time>{{ .Date.Format "2006年1月2日" }}</time>
+            {{ with .Params.difficulty }}
+                <span style="margin: 0 1rem;">难度: {{ . }}</span>
+            {{ end }}
+        </div>
+        
+        <div style="line-height: 1.8;">
+            {{ .Content }}
+        </div>
+    </article>
 {{ end }}

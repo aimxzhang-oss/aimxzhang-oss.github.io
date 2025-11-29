@@ -1,45 +1,17 @@
 {{ define "main" }}
-<div class="content-header">
     <h1>{{ .Title }}</h1>
     <p>{{ .Description }}</p>
-</div>
-
-{{ if .Content }}
-<div class="tutorial-intro">
-    {{ .Content }}
-</div>
-{{ end }}
-
-<div class="tutorial-grid">
+    
+    <div class="tutorial-grid">
     {{ range .Pages }}
-    <a href="{{ .RelPermalink }}" class="tutorial-card">
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Description }}</p>
-        <div style="margin-top: 10px; color: #666; font-size: 12px;">
-            📖 {{ .Params.difficulty | default "初级" }} · ⏱️ {{ .Params.duration | default "1小时" }}
-        </div>
-    </a>
+        <a href="{{ .RelPermalink }}" class="tutorial-card">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description }}</p>
+            <div style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
+                难度: {{ .Params.difficulty | default "初级" }} | 
+                时长: {{ .Params.duration | default "1小时" }}
+            </div>
+        </a>
     {{ end }}
-</div>
-
-<!-- 评论区域 -->
-<div class="comments-section">
-    <h3>💬 教程讨论</h3>
-    <div class="comment-form">
-        <textarea placeholder="分享你的学习心得或提出问题..."></textarea>
-        <button>发表评论</button>
     </div>
-    <ul class="comment-list">
-        <li class="comment-item">
-            <div class="comment-author">编程爱好者</div>
-            <span class="comment-date">2024-01-15</span>
-            <div class="comment-content">这个教程很实用，讲解得很清晰！</div>
-        </li>
-        <li class="comment-item">
-            <div class="comment-author">学习新手</div>
-            <span class="comment-date">2024-01-14</span>
-            <div class="comment-content">有没有更详细的示例代码？</div>
-        </li>
-    </ul>
-</div>
 {{ end }}

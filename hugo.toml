@@ -1,7 +1,7 @@
 baseURL = "https://aimxzhang-oss.github.io/"
 languageCode = "zh-cn"
 title = "编程教程网"
-theme = ""
+# 注意：完全没有 theme 配置
 
 [params]
   title = "编程教程网"
