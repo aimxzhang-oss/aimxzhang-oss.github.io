@@ -1,23 +1,4 @@
-baseURL = "https://aimxzhang-oss.github.io/"
-languageCode = "zh-cn"
-title = "编程教程网"
-# 注意：完全没有 theme 配置
-
-[params]
-  title = "编程教程网"
-  author = "教程团队"
-  description = "全面的编程教程学习平台"
-  
-[menu]
-  [[menu.main]]
-    name = "首页"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "教程"
-    url = "/tutorials/"
-    weight = 2
-  [[menu.main]]
-    name = "文章"
-    url = "/posts/"
-    weight = 3
+baseURL = 'https://aimxzhang-oss.github.io/'
+languageCode = 'zh-cn'
+title = '我的技术博客'
+theme = ''

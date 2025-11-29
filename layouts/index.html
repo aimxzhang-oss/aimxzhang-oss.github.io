@@ -1,40 +1,12 @@
 {{ define "main" }}
-    <h1>欢迎来到 {{ .Site.Title }}</h1>
-    <p>{{ .Site.Params.description }}</p>
+    <h1>欢迎！</h1>
+    <p>这是我的 Hugo 博客。</p>
+    <p>如果看到这个页面，说明 Hugo 构建成功了！</p>
     
-    <section style="margin: 2rem 0;">
-        <h2> 快速开始</h2>
-        <div class="tutorial-grid">
-            <a href="/tutorials/database/mysql/" class="tutorial-card">
-                <h3> MySQL 数据库</h3>
-                <p>学习关系型数据库的基础和高级特性</p>
-            </a>
-            <a href="/tutorials/frontend/html-css/" class="tutorial-card">
-                <h3> HTML/CSS</h3>
-                <p>网页开发的基础知识</p>
-            </a>
-            <a href="/tutorials/ai/machine-learning/" class="tutorial-card">
-                <h3> 机器学习</h3>
-                <p>人工智能和数据分析入门</p>
-            </a>
-        </div>
-    </section>
-
-    <section style="margin: 2rem 0;">
-        <h2> 最新文章</h2>
-        <ul style="list-style: none;">
-        {{ range where .Site.RegularPages "Type" "posts" }}
-            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                <a href="{{ .RelPermalink }}" style="text-decoration: none; color: #2c3e50;">
-                    <strong>{{ .Title }}</strong>
-                    <span style="color: #666; font-size: 0.9rem; margin-left: 1rem;">
-                        {{ .Date.Format "2006-01-02" }}
-                    </span>
-                </a>
-            </li>
-        {{ else }}
-            <li>暂无文章</li>
-        {{ end }}
-        </ul>
-    </section>
+    <h2>内容列表</h2>
+    <ul>
+    {{ range .Site.RegularPages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+    </ul>
 {{ end }}
