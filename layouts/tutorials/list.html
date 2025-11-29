@@ -1,17 +1,38 @@
 {{ define "main" }}
+<div class="content-header">
     <h1>{{ .Title }}</h1>
-    <p>{{ .Description }}</p>
-    
-    <div class="tutorial-grid">
+    <p class="breadcrumb">
+        <a href="/">首页</a> > 
+        <a href="/tutorials/">教程</a> > 
+        {{ .Title }}
+    </p>
+</div>
+
+{{ if .Content }}
+<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #3498db;">
+    {{ .Content }}
+</div>
+{{ end }}
+
+<div class="tutorial-grid">
     {{ range .Pages }}
-        <a href="{{ .RelPermalink }}" class="tutorial-card">
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Description }}</p>
-            <div style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
-                难度: {{ .Params.difficulty | default "初级" }} | 
-                时长: {{ .Params.duration | default "1小时" }}
-            </div>
-        </a>
+    <a href="{{ .RelPermalink }}" class="tutorial-card">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | default "点击查看详细教程内容..." }}</p>
+        <div class="tutorial-meta">
+            <span>⏱️ {{ .Params.duration | default "1小时" }}</span>
+            <span>📖 {{ .Params.difficulty | default "初级" }}</span>
+        </div>
+    </a>
     {{ end }}
-    </div>
+</div>
+
+<!-- 如果没有内容显示提示 -->
+{{ if not .Pages }}
+<div style="text-align: center; padding: 60px 20px; color: #666;">
+    <div style="font-size: 48px; margin-bottom: 20px;">📚</div>
+    <h3 style="color: #2c3e50; margin-bottom: 15px;">教程正在准备中</h3>
+    <p>该分类下的教程正在紧张编写中，敬请期待！</p>
+</div>
+{{ end }}
 {{ end }}

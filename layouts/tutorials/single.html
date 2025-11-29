@@ -1,15 +1,16 @@
 {{ define "main" }}
-<article>
-    <div class="content-header">
-        <h1>{{ .Title }}</h1>
-        <div style="color: #666; margin-top: 10px;">
-            <span>📖 {{ .Params.difficulty | default "初级" }}</span>
-            <span style="margin: 0 15px;">⏱️ {{ .Params.duration | default "1小时" }}</span>
-            <span>📅 {{ .Date.Format "2006-01-02" }}</span>
-        </div>
-    </div>
+<div class="content-header">
+    <h1>{{ .Title }}</h1>
+    <p class="breadcrumb">
+        <a href="/">首页</a> > 
+        <a href="/tutorials/">教程</a> > 
+        <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> > 
+        {{ .Title }}
+    </p>
+</div>
 
-    <!-- 教程目录 -->
+<div style="display: grid; grid-template-columns: 280px 1fr; gap: 30px;">
+    <!-- 左侧目录 -->
     <div class="tutorial-toc">
         <h3>📑 教程目录</h3>
         <ul class="toc-list">
@@ -17,41 +18,54 @@
             <li><a href="#installation">环境安装</a></li>
             <li><a href="#basics">基础知识</a></li>
             <li><a href="#advanced">进阶内容</a></li>
-            <li><a href="#examples">实战案例</a></li>
+            <li><a href="#practice">实战练习</a></li>
             <li><a href="#summary">总结</a></li>
         </ul>
-    </div>
-
-    <!-- 教程内容 -->
-    <div class="tutorial-content">
-        {{ .Content }}
-    </div>
-
-    <!-- 导航按钮 -->
-    <div style="display: flex; justify-content: space-between; margin: 30px 0; padding: 20px 0; border-top: 1px solid #e9ecef;">
-        <a href="{{ .Parent.RelPermalink }}" style="color: #e74c3c; text-decoration: none;">← 返回教程列表</a>
-        <a href="#" style="color: #e74c3c; text-decoration: none;">下一教程 →</a>
-    </div>
-
-    <!-- 评论区域 -->
-    <div class="comments-section">
-        <h3>💬 学习讨论</h3>
-        <div class="comment-form">
-            <textarea placeholder="在学习过程中遇到问题？或者有好的建议？欢迎留言讨论..."></textarea>
-            <button>发表评论</button>
+        
+        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e9ecef;">
+            <h4 style="color: #2c3e50; margin-bottom: 15px;">🔗 相关教程</h4>
+            <ul class="toc-list">
+                {{ range where .Site.RegularPages "Type" "tutorials" }}
+                    {{ if ne .File.UniqueID $.File.UniqueID }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                {{ end }}
+            </ul>
         </div>
-        <ul class="comment-list">
-            <li class="comment-item">
-                <div class="comment-author">技术达人</div>
-                <span class="comment-date">2024-01-16</span>
-                <div class="comment-content">这个教程很全面，特别是实战案例部分很有帮助！</div>
-            </li>
-            <li class="comment-item">
-                <div class="comment-author">编程新手</div>
-                <span class="comment-date">2024-01-15</span>
-                <div class="comment-content">环境配置部分能不能再详细一些？我在安装时遇到了一些问题。</div>
-            </li>
-        </ul>
     </div>
-</article>
+    
+    <!-- 右侧内容 -->
+    <article>
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                    <h2 style="color: white; margin-bottom: 10px;">学习目标</h2>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px;">
+                        <li>掌握 {{ .Title }} 的核心概念</li>
+                        <li>能够独立完成相关开发任务</li>
+                        <li>理解最佳实践和常见问题</li>
+                    </ul>
+                </div>
+                <div style="text-align: right;">
+                    <div style="background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; display: inline-block;">
+                        <strong>{{ .Params.difficulty | default "初级" }}</strong>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 14px;">
+                        ⏱️ {{ .Params.duration | default "2小时" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="line-height: 1.8; font-size: 16px;">
+            {{ .Content }}
+        </div>
+        
+        <!-- 导航按钮 -->
+        <div style="display: flex; justify-content: space-between; margin: 40px 0; padding: 25px 0; border-top: 1px solid #e9ecef;">
+            <a href="{{ .Parent.RelPermalink }}" style="color: #3498db; text-decoration: none; font-weight: bold;">← 返回教程列表</a>
+            <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">下一教程 →</a>
+        </div>
+    </article>
+</div>
 {{ end }}

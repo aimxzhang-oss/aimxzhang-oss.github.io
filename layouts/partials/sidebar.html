@@ -1,25 +1,31 @@
 <aside class="sidebar">
     <div class="sidebar-section">
-        <div class="sidebar-title">全部教程</div>
+        <div class="sidebar-title">
+            全部教程分类
+            <span class="arrow">▼</span>
+        </div>
         <ul class="sidebar-links">
-            {{ $current := .RelPermalink }}
-            <li><a href="/tutorials/" class="{{ if eq $current "/tutorials/" }}active{{ end }}">📚 所有教程</a></li>
-            <li><a href="/tutorials/database/" class="{{ if eq $current "/tutorials/database/" }}active{{ end }}">🗄️ 数据库</a></li>
-            <li><a href="/tutorials/frontend/" class="{{ if eq $current "/tutorials/frontend/" }}active{{ end }}">🎨 前端开发</a></li>
-            <li><a href="/tutorials/backend/" class="{{ if eq $current "/tutorials/backend/" }}active{{ end }}">⚙️ 后端开发</a></li>
-            <li><a href="/tutorials/ai/" class="{{ if eq $current "/tutorials/ai/" }}active{{ end }}">🤖 AI & 数据分析</a></li>
-            <li><a href="/tutorials/mobile/" class="{{ if eq $current "/tutorials/mobile/" }}active{{ end }}">📱 移动开发</a></li>
-            <li><a href="/tutorials/tools/" class="{{ if eq $current "/tutorials/tools/" }}active{{ end }}">🔧 开发工具</a></li>
+            <li><a href="/tutorials/" class="{{ if eq .RelPermalink "/tutorials/" }}active{{ end }}">🏠 所有教程</a></li>
+            <li><a href="/tutorials/database/" class="{{ if eq .RelPermalink "/tutorials/database/" }}active{{ end }}">🗄️ 数据库</a></li>
+            <li><a href="/tutorials/frontend/" class="{{ if eq .RelPermalink "/tutorials/frontend/" }}active{{ end }}">🎨 前端开发</a></li>
+            <li><a href="/tutorials/backend/" class="{{ if eq .RelPermalink "/tutorials/backend/" }}active{{ end }}">⚙️ 后端开发</a></li>
+            <li><a href="/tutorials/ai/" class="{{ if eq .RelPermalink "/tutorials/ai/" }}active{{ end }}">🤖 AI & 数据分析</a></li>
+            <li><a href="/tutorials/mobile/" class="{{ if eq .RelPermalink "/tutorials/mobile/" }}active{{ end }}">📱 移动开发</a></li>
+            <li><a href="/tutorials/tools/" class="{{ if eq .RelPermalink "/tutorials/tools/" }}active{{ end }}">🔧 开发工具</a></li>
         </ul>
     </div>
     
     <div class="sidebar-section">
-        <div class="sidebar-title">热门教程</div>
+        <div class="sidebar-title">
+            热门教程
+            <span class="arrow">▼</span>
+        </div>
         <ul class="sidebar-links">
-            <li><a href="/tutorials/database/mysql/">MySQL 数据库</a></li>
-            <li><a href="/tutorials/frontend/html-css/">HTML/CSS</a></li>
-            <li><a href="/tutorials/frontend/javascript/">JavaScript</a></li>
-            <li><a href="/tutorials/ai/machine-learning/">机器学习</a></li>
+            <li><a href="/tutorials/database/mysql/">📊 MySQL 数据库</a></li>
+            <li><a href="/tutorials/database/redis/">🗃️ Redis 内存数据库</a></li>
+            <li><a href="/tutorials/frontend/html-css/">🎯 HTML/CSS 基础</a></li>
+            <li><a href="/tutorials/frontend/javascript/">⚡ JavaScript 编程</a></li>
+            <li><a href="/tutorials/ai/machine-learning/">🧠 机器学习入门</a></li>
         </ul>
     </div>
 </aside>
