@@ -26,7 +26,7 @@
             min-height: 100vh;
         }
         
-        /* 头部样式 */
+        /* 澶撮儴鏍峰紡 */
         .header {
             background: #2c3e50;
             color: white;
@@ -90,7 +90,7 @@
             cursor: pointer;
         }
         
-        /* 侧边栏样式 */
+        /* 渚ц竟鏍忔牱寮?*/
         .sidebar {
             width: 280px;
             background: #34495e;
@@ -142,7 +142,7 @@
             border-left: 3px solid #e74c3c;
         }
         
-        /* 内容区域样式 */
+        /* 鍐呭鍖哄煙鏍峰紡 */
         .content {
             flex: 1;
             padding: 30px;
@@ -161,7 +161,7 @@
             margin-bottom: 10px;
         }
         
-        /* 教程网格样式 */
+        /* 鏁欑▼缃戞牸鏍峰紡 */
         .tutorial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -200,7 +200,7 @@
             margin-bottom: 15px;
         }
 
-        /* 移动端响应式设计 */
+        /* 绉诲姩绔搷搴斿紡璁捐 */
         @media (max-width: 1024px) {
             .container {
                 flex-direction: column;
@@ -310,14 +310,14 @@
                 {{ end }}
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="搜索教程...">
-                <button>搜索</button>
+                <input type="text" placeholder="鎼滅储鏁欑▼...">
+                <button>鎼滅储</button>
             </div>
         </nav>
     </header>
     
     <div class="container">
-        {{ partial "sidebar.html" . }}
+        {{ partial "smart-sidebar.html" . }}
         
         <main class="content">
             {{ block "main" . }}{{ end }}

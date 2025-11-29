@@ -1,57 +1,57 @@
-{{ define "main" }}
+{{ define "main" }}<div class="tutorial-page">
 <div class="content-header">
     <h1>{{ .Title }}</h1>
     <p class="breadcrumb">
-        <a href="/">首页</a> > 
-        <a href="/tutorials/">教程</a> > 
+        <a href="/">棣栭〉</a> > 
+        <a href="/tutorials/">鏁欑▼</a> > 
         <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> > 
         {{ .Title }}
     </p>
 </div>
 
 <div style="display: grid; grid-template-columns: 280px 1fr; gap: 30px;">
-    <!-- 左侧目录 -->
+    <!-- 宸︿晶鐩綍 -->
     <div class="tutorial-toc">
-        <h3>📑 教程目录</h3>
+        <h3>馃搼 鏁欑▼鐩綍</h3>
         <ul class="toc-list">
-            <li><a href="#introduction">课程介绍</a></li>
-            <li><a href="#installation">环境安装</a></li>
-            <li><a href="#basics">基础知识</a></li>
-            <li><a href="#advanced">进阶内容</a></li>
-            <li><a href="#practice">实战练习</a></li>
-            <li><a href="#summary">总结</a></li>
+            <li><a href="#introduction">璇剧▼浠嬬粛</a></li>
+            <li><a href="#installation">鐜瀹夎</a></li>
+            <li><a href="#basics">鍩虹鐭ヨ瘑</a></li>
+            <li><a href="#advanced">杩涢樁鍐呭</a></li>
+            <li><a href="#practice">瀹炴垬缁冧範</a></li>
+            <li><a href="#summary">鎬荤粨</a></li>
         </ul>
         
         <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e9ecef;">
-            <h4 style="color: #2c3e50; margin-bottom: 15px;">🔗 相关教程</h4>
+            <h4 style="color: #2c3e50; margin-bottom: 15px;">馃敆 鐩稿叧鏁欑▼</h4>
             <ul class="toc-list">
                 {{ range where .Site.RegularPages "Type" "tutorials" }}
                     {{ if ne .File.UniqueID $.File.UniqueID }}
                     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                    {{ end }}
-                {{ end }}
+                    </div>{{ end }}
+                </div>{{ end }}
             </ul>
         </div>
     </div>
     
-    <!-- 右侧内容 -->
+    <!-- 鍙充晶鍐呭 -->
     <article>
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-bottom: 25px;">
             <div style="display: flex; justify-content: space-between; align-items: start;">
                 <div>
-                    <h2 style="color: white; margin-bottom: 10px;">学习目标</h2>
+                    <h2 style="color: white; margin-bottom: 10px;">瀛︿範鐩爣</h2>
                     <ul style="color: rgba(255,255,255,0.9); margin-left: 20px;">
-                        <li>掌握 {{ .Title }} 的核心概念</li>
-                        <li>能够独立完成相关开发任务</li>
-                        <li>理解最佳实践和常见问题</li>
+                        <li>鎺屾彙 {{ .Title }} 鐨勬牳蹇冩蹇?/li>
+                        <li>鑳藉鐙珛瀹屾垚鐩稿叧寮€鍙戜换鍔?/li>
+                        <li>鐞嗚В鏈€浣冲疄璺靛拰甯歌闂</li>
                     </ul>
                 </div>
                 <div style="text-align: right;">
                     <div style="background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; display: inline-block;">
-                        <strong>{{ .Params.difficulty | default "初级" }}</strong>
+                        <strong>{{ .Params.difficulty | default "鍒濈骇" }}</strong>
                     </div>
                     <div style="margin-top: 10px; font-size: 14px;">
-                        ⏱️ {{ .Params.duration | default "2小时" }}
+                        鈴憋笍 {{ .Params.duration | default "2灏忔椂" }}
                     </div>
                 </div>
             </div>
@@ -61,11 +61,11 @@
             {{ .Content }}
         </div>
         
-        <!-- 导航按钮 -->
+        <!-- 瀵艰埅鎸夐挳 -->
         <div style="display: flex; justify-content: space-between; margin: 40px 0; padding: 25px 0; border-top: 1px solid #e9ecef;">
-            <a href="{{ .Parent.RelPermalink }}" style="color: #3498db; text-decoration: none; font-weight: bold;">← 返回教程列表</a>
-            <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">下一教程 →</a>
+            <a href="{{ .Parent.RelPermalink }}" style="color: #3498db; text-decoration: none; font-weight: bold;">鈫?杩斿洖鏁欑▼鍒楄〃</a>
+            <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">涓嬩竴鏁欑▼ 鈫?/a>
         </div>
     </article>
 </div>
-{{ end }}
+</div>{{ end }}
