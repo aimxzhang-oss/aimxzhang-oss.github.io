@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章列表 on 编程教程网</title><link>https://aimxzhang-oss.github.io/posts/</link><description>Recent content in 文章列表 on 编程教程网</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 16 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://aimxzhang-oss.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到我的博客</title><link>https://aimxzhang-oss.github.io/posts/first-post/</link><pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate><guid>https://aimxzhang-oss.github.io/posts/first-post/</guid><description>&lt;h1 id="欢迎"&gt;欢迎！&lt;/h1&gt;
+&lt;p&gt;这是我的 Hugo 博客的第一篇文章。&lt;/p&gt;
+&lt;p&gt;感谢访问！&lt;/p&gt;</description></item><item><title>欢迎来到我的博客</title><link>https://aimxzhang-oss.github.io/posts/welcome/</link><pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate><guid>https://aimxzhang-oss.github.io/posts/welcome/</guid><description>&lt;h1 id="欢迎"&gt;欢迎！&lt;/h1&gt;
+&lt;p&gt;这是我的 Hugo 博客的第一篇文章。&lt;/p&gt;
+&lt;p&gt;感谢访问！这里将分享我的技术学习心得和项目经验。&lt;/p&gt;
+&lt;h2 id="关于我"&gt;关于我&lt;/h2&gt;
+&lt;p&gt;我是一名技术爱好者，喜欢探索各种编程技术。&lt;/p&gt;
+&lt;h2 id="博客内容"&gt;博客内容&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;技术教程&lt;/li&gt;
+&lt;li&gt;学习心得&lt;/li&gt;
+&lt;li&gt;项目实践&lt;/li&gt;
+&lt;li&gt;技术前沿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;期待与你交流！&lt;/p&gt;</description></item><item><title>学习 Hugo 搭建博客</title><link>https://aimxzhang-oss.github.io/posts/learn-hugo/</link><pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate><guid>https://aimxzhang-oss.github.io/posts/learn-hugo/</guid><description>&lt;p&gt;今天学习了如何使用 Hugo 搭建个人博客。&lt;/p&gt;
+&lt;h2 id="步骤"&gt;步骤&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 Hugo&lt;/li&gt;
+&lt;li&gt;创建新站点&lt;/li&gt;
+&lt;li&gt;配置主题&lt;/li&gt;
+&lt;li&gt;编写内容&lt;/li&gt;
+&lt;li&gt;构建部署&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="心得"&gt;心得&lt;/h2&gt;
+&lt;p&gt;Hugo 真的很方便，构建速度特别快！&lt;/p&gt;</description></item></channel></rss>
