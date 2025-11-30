@@ -12,6 +12,6 @@ title = "编程教程网"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "教程"
+    name = "孟意意"
     url = "/tutorials/"
     weight = 2
