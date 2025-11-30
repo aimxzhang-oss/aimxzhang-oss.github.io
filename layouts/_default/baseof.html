@@ -26,7 +26,7 @@
             min-height: 100vh;
         }
         
-        /* 婢舵挳鍎撮弽宄扮础 */
+        /* 头部样式 */
         .header {
             background: #2c3e50;
             color: white;
@@ -90,7 +90,7 @@
             cursor: pointer;
         }
         
-        /* 娓氀嗙珶閺嶅繑鐗卞?*/
+        /* 侧边栏样式 */
         .sidebar {
             width: 280px;
             background: #34495e;
@@ -110,6 +110,14 @@
             font-weight: bold;
             font-size: 16px;
             border-left: 4px solid #e74c3c;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+        
+        .sidebar-title .arrow {
+            font-size: 12px;
+            transition: transform 0.3s;
         }
         
         .sidebar-links {
@@ -142,7 +150,30 @@
             border-left: 3px solid #e74c3c;
         }
         
-        /* 閸愬懎顔愰崠鍝勭厵閺嶅嘲绱?*/
+        .sidebar-links .submenu {
+            list-style: none;
+            background: #2c3e50;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .sidebar-links .submenu.show {
+            max-height: 500px;
+        }
+        
+        .sidebar-links .submenu a {
+            padding: 10px 25px 10px 40px;
+            font-size: 14px;
+            border-left: 2px solid #3498db;
+        }
+        
+        .sidebar-links .submenu a:hover {
+            background: #34495e;
+            padding-left: 45px;
+        }
+        
+        /* 内容区域样式 */
         .content {
             flex: 1;
             padding: 30px;
@@ -161,7 +192,17 @@
             margin-bottom: 10px;
         }
         
-        /* 閺佹瑧鈻肩純鎴炵壐閺嶅嘲绱?*/
+        .content-header .breadcrumb {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .content-header .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        /* 教程网格样式 */
         .tutorial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -185,12 +226,22 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             border-color: #e74c3c;
+            text-decoration: none;
+            color: #333;
         }
         
         .tutorial-card h3 {
             color: #2c3e50;
             margin-bottom: 12px;
             font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tutorial-card h3::before {
+            content: "📚";
+            margin-right: 10px;
+            font-size: 18px;
         }
         
         .tutorial-card p {
@@ -199,9 +250,68 @@
             line-height: 1.6;
             margin-bottom: 15px;
         }
-
-        /* 缁夎濮╃粩顖氭惙鎼存柨绱＄拋鎹愵吀 */
-        @media (max-width: 1024px) {
+        
+        .tutorial-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 12px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+        
+        /* 教程目录样式 */
+        .tutorial-toc {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .tutorial-toc h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.3s;
+        }
+        
+        .toc-list li:hover {
+            background: white;
+            padding-left: 10px;
+        }
+        
+        .toc-list a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .toc-list a:hover {
+            color: #e74c3c;
+        }
+        
+        .toc-list a::before {
+            content: "📖";
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
             .container {
                 flex-direction: column;
             }
@@ -209,93 +319,10 @@
             .sidebar {
                 width: 100%;
                 min-height: auto;
-                position: relative;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-main {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                order: 2;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .search-box {
-                order: 3;
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            .search-box input {
-                width: 100%;
-            }
-            
-            .sidebar-title {
-                padding: 12px 15px;
-                font-size: 14px;
-            }
-            
-            .sidebar-links a {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
-            .content {
-                padding: 15px;
-            }
-            
-            .content-header h1 {
-                font-size: 24px;
             }
             
             .tutorial-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .tutorial-card {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 10px 0;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            
-            .nav-links li {
-                margin: 0 8px;
-            }
-            
-            .nav-links a {
-                padding: 4px 8px;
-                font-size: 14px;
-            }
-            
-            .content {
-                padding: 10px;
-            }
-            
-            .tutorial-card {
-                padding: 15px;
             }
         }
     </style>
@@ -310,18 +337,46 @@
                 {{ end }}
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="閹兼粎鍌ㄩ弫娆戔柤...">
-                <button>閹兼粎鍌?/button>
+                <input type="text" placeholder="搜索教程...">
+                <button>搜索</button>
             </div>
         </nav>
     </header>
     
     <div class="container">
-        {{ partial "smart-sidebar.html" . }}
+        {{ partial "sidebar.html" . }}
         
         <main class="content">
             {{ block "main" . }}{{ end }}
         </main>
     </div>
+
+    <script>
+        // 侧边栏折叠功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarTitles = document.querySelectorAll('.sidebar-title');
+            
+            sidebarTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const links = this.nextElementSibling;
+                    const arrow = this.querySelector('.arrow');
+                    
+                    if (links.style.maxHeight && links.style.maxHeight !== '0px') {
+                        links.style.maxHeight = '0px';
+                        arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        links.style.maxHeight = links.scrollHeight + 'px';
+                        arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // 默认展开第一个分类
+            const firstSection = document.querySelector('.sidebar-links');
+            if (firstSection) {
+                firstSection.style.maxHeight = firstSection.scrollHeight + 'px';
+            }
+        });
+    </script>
 </body>
 </html>
